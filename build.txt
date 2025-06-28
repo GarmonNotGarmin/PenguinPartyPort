@@ -1,0 +1,3 @@
+displayName = The Mod 2
+author = Garmon, MaximPrime
+version = 0.1
