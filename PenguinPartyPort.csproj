@@ -11,6 +11,7 @@
 	<!-- References -->
 	<ItemGroup>
 	  <Folder Include="Common\Commands\" />
+	  <Folder Include="Schematics\" />
 	</ItemGroup>
 
 </Project>
