@@ -32,6 +32,6 @@ public class Schematic
     public static ushort[,] ParseFile(string fileName)
     {
         SchematicFile.Load(fileName);
-        return SchematicFile.file.TileIDs;
+        return SchematicFile.File.TileIDs;
     }
 }
