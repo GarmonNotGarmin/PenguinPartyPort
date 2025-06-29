@@ -21,11 +21,23 @@ public class PointerDraw : ModSystem
 
         Point Point1 = pointer.Point1;
         Point Point2 = pointer.Point2;
+        Point mousePoint = pointer.MousePoint;
 
         Texture2D texture = ModContent.Request<Texture2D>("PenguinPartyPort/Assets/PointerHighlight").Value;
         Texture2D texturePoint1 = ModContent.Request<Texture2D>("PenguinPartyPort/Assets/Point1").Value;
         Texture2D texturePoint2 = ModContent.Request<Texture2D>("PenguinPartyPort/Assets/Point2").Value;
-        Main.spriteBatch.Begin();
+
+        //the stuff inside Begin() apparently fixes the textures not drawing properly when zooming in????? whatever
+        Main.spriteBatch.Begin(
+            SpriteSortMode.Deferred,
+            BlendState.AlphaBlend, 
+            SamplerState.LinearClamp, 
+            DepthStencilState.None, 
+            RasterizerState.CullCounterClockwise, 
+            null, 
+            Main.GameViewMatrix.TransformationMatrix
+        );
+
         if (Point1 != new Point(-1, -1) && Point2 != new Point(-1, -1) && Point1 != Point2)
             DrawRectangle(Point1, Point2, texture, Color.Yellow * 0.5f);
 
@@ -34,8 +46,7 @@ public class PointerDraw : ModSystem
         if (Point2 != new Point(-1, -1) && Point2 != Point1)
             DrawPointer(Point2, texturePoint2, Color.Green * 0.5f);
 
-        Point mousePos = Main.MouseWorld.ToTileCoordinates();
-        DrawPointer(mousePos, texture, Color.Yellow * 0.5f);
+        DrawPointer(mousePoint, texture, Color.Yellow * 0.5f);
         Main.spriteBatch.End();
     }
 

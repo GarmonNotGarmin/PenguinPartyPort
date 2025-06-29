@@ -12,6 +12,7 @@ public class Pointer : ModPlayer
 {
     public Point Point1 = new(-1, -1);
     public Point Point2 = new(-1, -1);
+    public Point MousePoint;
 
     public void UpdatePointer(Point point1, Point point2)
     {
