@@ -1,1 +1,11 @@
+Items: {
+	Pointer: {
+		DisplayName: Pointer
+		Tooltip: ""
+	}
 
+	PointerItem: {
+		DisplayName: Pointer Item
+		Tooltip: ""
+	}
+}

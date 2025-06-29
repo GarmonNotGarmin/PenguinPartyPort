@@ -7,10 +7,12 @@
 	<PropertyGroup>
 		
 	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="Content\Items\Tools\PointerItem.png" />
+	</ItemGroup>
 
 	<!-- References -->
 	<ItemGroup>
-	  <Folder Include="Common\Commands\" />
 	  <Folder Include="Schematics\" />
 	</ItemGroup>
 
