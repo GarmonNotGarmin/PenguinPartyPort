@@ -32,13 +32,12 @@ public class PointerItem : ModItem
     public override bool CanUseItem(Player player) => false;
 
     private bool wasPressingLeftClick = false;
+    private bool wasPressingRightClick = false;
 
     public override void HoldItem(Player player)
     {
         Point mousePoint = Main.MouseWorld.ToTileCoordinates();
         var pointer = player.GetModPlayer<Pointer>();
-
-        pointer.MousePoint = mousePoint;
 
         if (wasPressingLeftClick && Main.mouseLeftRelease)
         {
