@@ -3,9 +3,7 @@ using Microsoft.Xna.Framework;
 using System.IO;
 using Terraria.ModLoader;
 using Terraria;
-using Terraria.ModLoader.Core;
 using System;
-using Terraria.ID;
 
 namespace PenguinPartyPort.Common.Systems;
 

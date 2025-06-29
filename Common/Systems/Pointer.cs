@@ -1,10 +1,5 @@
-﻿using PenguinPartyPort.Content.Items.Tools;
-using Terraria.ModLoader;
+﻿using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria.GameContent;
-using Terraria;
-using System;
 
 namespace PenguinPartyPort.Common.Systems;
 
@@ -18,6 +13,22 @@ public class Pointer : ModPlayer
     {
         Point1 = point1;
         Point2 = point2;
+    }
+
+    public bool CheckAndSwapPoints()
+    {
+        bool isSwapped = false;
+        if (Point1.X > Point2.X)
+        {
+            (Point1.X, Point2.X) = (Point2.X, Point1.X);
+            isSwapped = true;
+        }
+        if (Point1.Y > Point2.Y)
+        {
+            (Point1.Y, Point2.Y) = (Point2.Y, Point1.Y);
+            isSwapped = true;
+        }
+        return isSwapped;
     }
 
     public override void Initialize()
